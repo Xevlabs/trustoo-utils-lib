@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "projects": {
+    "trustoo-utils": {
+      "root": "libs/trustoo-utils",
+      "sourceRoot": "libs/trustoo-utils/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/trustoo-utils/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/trustoo-utils"],
+          "options": {
+            "jestConfig": "libs/trustoo-utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": { "defaultCollection": "@nrwl/workspace" }
+}
