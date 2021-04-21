@@ -1,0 +1,46 @@
+name: Test if pull request does not fail build
+
+on: pull_request
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking out ${GITHUB_REF#refs/heads/}
+        uses: actions/checkout@master
+        with:
+          token: ${{ secrets.GIT_ACCESS_TOKEN }}
+          submodules: true
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@master
+        with:
+          node-version: '12.19.0'
+
+      - name: Cache dependencies
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - uses: actions/cache@v2
+        name: Cache Jest cache
+        id: cache-jest-cache
+        with:
+            path: '.jest-cache'
+            key: ${{ runner.os }}-${{ matrix.node-version }}-jest
+
+      - name: Build changed apps
+        run: yarn run affected:build --base=origin/${{ github.base_ref }}
+
+      - name: Test changed apps
+        run: yarn run affected:test --base=origin/${{ github.base_ref }} --passWithNoTests
