@@ -1,1 +1,1 @@
-export * from './lib/trustoo-utils';
+export * from './lib/trustoo-utils.module';
