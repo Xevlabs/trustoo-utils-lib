@@ -17,7 +17,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "trustoo-utils-lib",
+            "prefix": "trustooUtilsLib",
             "style": "camelCase"
           }
         ],

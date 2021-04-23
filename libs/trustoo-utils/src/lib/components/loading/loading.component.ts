@@ -12,8 +12,6 @@ export class LoadingComponent implements AfterViewInit {
   @Input() loadingService: any;
   isLoading = false;
 
-  constructor() { }
-
   ngAfterViewInit(): void {
     if (this.loadingService) {
       this.loadingService.get().pipe(delay(0), untilDestroyed(this)).subscribe((loading: boolean) => {

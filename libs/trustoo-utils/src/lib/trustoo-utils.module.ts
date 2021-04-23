@@ -5,7 +5,10 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TranslocoModule } from '@ngneat/transloco';
-import { TRANSLOCO_PROVIDER } from './configs/transloco.config';
+import { BackNavigationDirective } from './directives/back-navigation/back-navigation.directive';
+import { ConfirmationDirective } from './directives/confirmation/confirmation.directive';
+import { ResolveCarNameFromInspectionPipe } from './pipes/resolve-car-name-from-inspection/resolve-car-name-from-inspection.pipe';
+import { UserNamePipe } from './pipes/user-name/user-name.pipe';
 
 @NgModule({
     imports: [
@@ -14,13 +17,22 @@ import { TRANSLOCO_PROVIDER } from './configs/transloco.config';
         FlexLayoutModule,
         TranslocoModule
     ],
-    providers: [
-        TRANSLOCO_PROVIDER
-    ],
     declarations: [
         LoadingComponent,
-        PageNotFoundComponent
+        PageNotFoundComponent,
+        BackNavigationDirective,
+        ConfirmationDirective,
+        ResolveCarNameFromInspectionPipe,
+        UserNamePipe
     ],
+    exports: [
+        LoadingComponent,
+        PageNotFoundComponent,
+        BackNavigationDirective,
+        ConfirmationDirective,
+        ResolveCarNameFromInspectionPipe,
+        UserNamePipe
+    ]
 })
 export class TrustooUtilsModule {
 }
