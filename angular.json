@@ -36,6 +36,7 @@
       "root": "libs/trustoo-utils",
       "sourceRoot": "libs/trustoo-utils/src",
       "projectType": "library",
+      "prefix": "trustoo-utils-lib",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
