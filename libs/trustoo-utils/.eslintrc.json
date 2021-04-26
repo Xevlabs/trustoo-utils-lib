@@ -9,7 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["apps/trustoo-partner-app/tsconfig.*?.json"]
+        "project": ["libs/trustoo-utils/tsconfig.*?.json"]
       },
       "rules": {
         "no-console": ["error", {"allow":  ["error"]}],
@@ -17,7 +17,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "trustoo-partner-web",
+            "prefix": "trustooUtilsLib",
             "style": "camelCase"
           }
         ],
@@ -25,7 +25,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "trustoo-partner-web",
+            "prefix": "trustoo-utils-lib",
             "style": "kebab-case"
           }
         ]
