@@ -1,4 +1,8 @@
 export enum MissionStatusEnum {
+    NEW = 'new',
+    PENDING = 'pending',
+    COMPLETE = 'complete',
     PROCESSING = 'processing',
-    COMPLETE = 'complete'
+    CANCELED = 'canceled',
+    DISPUTED = 'disputed'
 }
