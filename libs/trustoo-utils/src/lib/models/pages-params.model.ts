@@ -17,7 +17,7 @@ export interface PageValues extends Omit<PagesParamsModel, 'components'> {
   checked?: boolean;
 }
 
-export interface FormPageValues extends Omit<PageValues, 'createdAt' | 'updatedAt'> {}
+export type FormPageValues = Omit<PageValues, 'createdAt' | 'updatedAt'>
 
 export interface ConfigPageParamsModel {
   titleKey: string,
