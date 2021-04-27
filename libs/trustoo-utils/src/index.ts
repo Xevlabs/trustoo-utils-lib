@@ -6,3 +6,5 @@ export * from './lib/models/index';
 export * from './lib/services/loading/loading.service';
 export * from './lib/services/back-navigation/back-navigation.service';
 export * from './lib/components/page-not-found/page-not-found.component'
+export * from './lib/directives/confirmation/confirmation.directive';
+export * from './lib/directives/back-navigation/back-navigation.directive';
