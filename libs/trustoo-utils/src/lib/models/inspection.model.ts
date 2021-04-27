@@ -16,4 +16,4 @@ export interface InspectionModel {
   status: InspectionStatusEnum
 }
 
-export interface InspectorModel extends Omit<UserModel, 'token' | 'type'| 'createdAt'| 'age'> {}
+export type InspectorModel = Omit<UserModel, 'token' | 'type'| 'createdAt'| 'age'>
