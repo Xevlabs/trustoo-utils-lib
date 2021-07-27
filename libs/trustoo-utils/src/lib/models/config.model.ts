@@ -8,6 +8,8 @@ export interface ConfigModel {
   version: string;
   lastUpdate: string;
   country: CountryEnum;
+  type: string;
+  name: string;
   menuParams: MenuParamsModel[];
   pages: ConfigPageParamsModel[];
   components: ComponentConfig[];
