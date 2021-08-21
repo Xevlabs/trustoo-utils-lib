@@ -8,6 +8,7 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { ConfirmationDirective } from './directives/confirmation/confirmation.directive';
 import { ResolveCarNameFromInspectionPipe } from './pipes/resolve-car-name-from-inspection/resolve-car-name-from-inspection.pipe';
 import { UserNamePipe } from './pipes/user-name/user-name.pipe';
+import { MissionDatePipe } from './pipes/mission-date-pipe/mission-date.pipe';
 
 @NgModule({
     imports: [
@@ -21,14 +22,16 @@ import { UserNamePipe } from './pipes/user-name/user-name.pipe';
         PageNotFoundComponent,
         ConfirmationDirective,
         ResolveCarNameFromInspectionPipe,
-        UserNamePipe
+        UserNamePipe,
+        MissionDatePipe
     ],
     exports: [
         LoadingComponent,
         PageNotFoundComponent,
         ConfirmationDirective,
         ResolveCarNameFromInspectionPipe,
-        UserNamePipe
+        UserNamePipe,
+        MissionDatePipe
     ]
 })
 export class TrustooUtilsModule {
