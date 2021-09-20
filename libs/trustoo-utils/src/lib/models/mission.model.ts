@@ -2,7 +2,7 @@ import { AskModel } from './ask.model';
 
 export interface MissionModel {
     id: number,
-    configId?: string;
+    configuration?: string;
     createdAt: Date,
     specialist?: {
         id: number,
