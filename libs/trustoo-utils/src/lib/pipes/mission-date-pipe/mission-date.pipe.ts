@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MissionDatePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): Date {
-    return new Date((value as string).split(' ')[0].split('-').join('/'));
+  transform(value: Date | string, ...args: unknown[]): Date {
+      if (typeof value === 'string') {
+          return new Date((value as string).split(' ')[0].split('-').join('/'));
+      }
+      return value
   }
 
 }
