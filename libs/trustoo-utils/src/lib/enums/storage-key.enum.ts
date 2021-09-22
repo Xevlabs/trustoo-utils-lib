@@ -1,3 +1,4 @@
 export enum StorageKeyEnum {
-    INSPECTION = 'inspection'
+    INSPECTION = 'inspection',
+    CONFIG = 'config'
 }
