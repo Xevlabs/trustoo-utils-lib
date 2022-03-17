@@ -1,5 +1,6 @@
 import { AddressModel } from './address.model';
 import { ClientModel } from './client.model';
+import { VendorModel } from './vendor.model';
 
 export interface AskModel {
     id: string,
@@ -11,5 +12,6 @@ export interface AskModel {
     carYear: number,
     carLocation: AddressModel,
     client: ClientModel,
-    note: string | null
+    vendor: VendorModel,
+    description: string | null
 }
