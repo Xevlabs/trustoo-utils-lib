@@ -7,5 +7,6 @@ export interface ClientModel {
     createdAt: Date,
     age: number,
     email: string,
-    phone: number
+    phone: number,
+    partner: '0' | '1'
 }
