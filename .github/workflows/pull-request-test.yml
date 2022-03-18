@@ -13,7 +13,7 @@ jobs:
         with:
           token: ${{ secrets.GIT_ACCESS_TOKEN }}
           submodules: true
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
       - name: Setup NodeJs
