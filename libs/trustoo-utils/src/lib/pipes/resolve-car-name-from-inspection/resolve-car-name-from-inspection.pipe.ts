@@ -10,13 +10,15 @@ export class ResolveCarNameFromInspectionPipe implements PipeTransform {
         const detailsPage = inspection?.pages.find(page => page.pageSlug === 'registration-certificate') ||
             inspection?.pages.find(page => page.pageSlug === 'vehicle-characteristics')
         if (detailsPage)  {
-            const brand = detailsPage.components.find(component => component.id === 20111)?.value
-            const model = detailsPage.components.find(component => component.id === 20112)?.value
+            const brand = detailsPage.components.find(component => component.id === 20112)?.value
+            const model = detailsPage.components.find(component => component.id === 20113)?.value
+
             if (!!brand && !!model) {
                 if (type[0] ==='complete') {
-                    const dateStamp = detailsPage.components.find(component => component.id === 20105)?.value
+                    const dateStamp = detailsPage.components.find(component => component.id === 20107)?.value
                     if (dateStamp) {
-                        const date = new Date(dateStamp.seconds * 1000)
+
+                        const date = new Date(dateStamp.seconds ? dateStamp.seconds * 1000: dateStamp)
                         return `${brand} ${model} ${date.getFullYear()}`;
                     }
                     return `${brand} ${model} ${inspection.mission.ask.carYear}`;
