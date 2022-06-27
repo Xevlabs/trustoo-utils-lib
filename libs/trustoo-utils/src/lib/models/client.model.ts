@@ -1,12 +1,7 @@
-export interface ClientModel {
+import { UserModel } from './auth.model';
+
+export interface ClientModel extends Omit<UserModel, 'id' | 'createdAt'> {
     id: string,
-    firstName: string,
-    lastName: string,
-    token: string,
-    type: string,
     createdAt: Date,
-    age: number,
-    email: string,
-    phone: number,
     partner: '0' | '1'
 }

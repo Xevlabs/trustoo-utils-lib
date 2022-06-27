@@ -13,7 +13,12 @@ export interface InspectionModel {
   missionId: number,
   pages: PageValues[],
   mission: MissionModel,
-  status: InspectionStatusEnum
+  status: InspectionStatusEnum,
+  pdf?: {
+      version?: number,
+      templateId?: string,
+      id?: string | null
+  }
 }
 
-export type InspectorModel = Omit<UserModel, 'token' | 'type'| 'createdAt'| 'age'>
+export type InspectorModel = Omit<UserModel, 'token' | 'type' | 'createdAt'>

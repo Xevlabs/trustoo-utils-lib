@@ -10,7 +10,7 @@ export interface UserModel {
     token: string,
     type: string,
     createdAt: string,
-    age: number,
+    birthDate: string,
     email: string,
     phone: number
 }
