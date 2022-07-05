@@ -6,5 +6,7 @@ export enum ComponentTypeEnum {
   TEXTAREA = 'TEXTAREA',
   PICTURE = 'PICTURE',
   DATE = 'DATE',
-  NUMBER = 'NUMBER'
+  DATE_TIME = 'DATE_TIME',
+  NUMBER = 'NUMBER',
+  SIGNATURE = 'SIGNATURE'
 }
